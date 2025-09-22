@@ -12,6 +12,6 @@ Docker Maschinen Starten mit docker Compose:
 
 Kali VM benutzen:
 
-`podman exec -it kali-attacker bash`
+`podman exec -it kali bash`
 
 anstatt ip adresse einfach den hostname für metasploid verwenden metasploitable2
