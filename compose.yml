@@ -12,7 +12,7 @@ services:
     build:
       context: .
       dockerfile: Kali/DOCKERFILE
-    container_name: kali-attacker
+    container_name: kali
     tty: true
     stdin_open: true # This ensures interactive mode
     hostname: kali
@@ -22,7 +22,7 @@ services:
 
   metasploitable2:
     image: docker.io/tleemcjr/metasploitable2
-    container_name: metasploitable2-target
+    container_name: metasploitable2
     hostname: metasploitable2
     networks:
       - kali
