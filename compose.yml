@@ -1,0 +1,30 @@
+version: "3.8"
+
+networks:
+  kali:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.20.0.0/16"
+
+services:
+  kali:
+    build:
+      context: .
+      dockerfile: Kali/DOCKERFILE
+    container_name: kali-attacker
+    tty: true
+    stdin_open: true # This ensures interactive mode
+    hostname: kali
+    networks:
+      - kali
+    privileged: true
+
+  metasploitable2:
+    image: docker.io/tleemcjr/metasploitable2
+    container_name: metasploitable2-target
+    hostname: metasploitable2
+    networks:
+      - kali
+    tty: true
+    privileged: true
